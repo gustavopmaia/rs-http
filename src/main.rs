@@ -5,8 +5,8 @@ use requests::post;
 
 #[tokio::main]
 async fn main(){
-  get().await;  
-  post().await;
+  get("https://httpbin.org/get").await;  
+  post("https://httpbin.org/post").await;
 }
 
 
