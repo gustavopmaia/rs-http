@@ -1,9 +1,8 @@
 #![allow(unused_must_use)]
 pub mod requests;
-use requests::get;
-use requests::post;
-use requests::put;
-use requests::delete;
+pub mod ip;
+
+use requests::{get, post, put, delete};
 
 #[tokio::main]
 async fn main(){
