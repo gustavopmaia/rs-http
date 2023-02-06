@@ -18,6 +18,16 @@ pub async fn put(url: &str) -> surf::Result<surf::Response> {
   Ok(res)
 }
 
+pub async fn patch(url: &str) -> surf::Result<surf::Response> {
+  let uri = url;
+  let data = &Ip::new("129.0.0.1");
+  let mut res = surf::patch(uri).body_json(data)?.await?;
+  assert_eq!(res.status(), 200);
+  dbg!(res.body_string().await?);
+  
+  Ok(res)
+}
+
 pub async fn post(url: &str) -> surf::Result<surf::Response> {
 
   let uri = url;
